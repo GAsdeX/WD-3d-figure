@@ -1,0 +1,72 @@
+// "out": "../css/style.css"
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Calibri";
+}
+body {
+    perspective: 1500px;
+    perspective-origin: -500px -8000px;
+}
+h1, h2, h3, h4, h5, h6, ul, li, a, span, div, p {
+    margin: 0;
+    padding: 0;
+    font-family: "Calibri";
+    text-decoration: none;
+    list-style: none;
+    font-size: 14px;
+    color: #000;
+    font-weight: normal;
+}
+
+.btn {
+    display: inline-block;
+    background: #000;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.container {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    margin: 150px auto 100px;
+    cursor: pointer;
+
+    .side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        opacity: 0.8;
+        background: url(../img/texture.jpg) no-repeat center;
+        background-size: cover;
+
+        &.front {
+            transform: translateZ(125px);
+        }
+        &.back {
+            transform: translateZ(-125px);
+        }
+        &.top {
+            transform: translateY(-125px) rotateX(90deg);
+        }
+        &.bottom {
+            transform: translateY(125px) rotateX(90deg);
+        }
+        &.left {
+            transform: translateX(-125px) rotateY(270deg);
+        }
+        &.right {
+            transform: translateX(125px) rotateY(90deg);
+        }
+    }
+}
